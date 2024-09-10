@@ -5,8 +5,9 @@ while i < l:
     if my_list[i] > 0:
         print(my_list[i])
         i = i + 1
-    else:
-        var = my_list[i] < 0
+    elif my_list[i] == 0:
         i = i + 1
         continue
-print('Конец строки')
+    else:
+        print('Дошли до нуля')
+        break
