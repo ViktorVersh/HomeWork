@@ -7,6 +7,6 @@ while i < l:
         i = i + 1
     else:
         var = my_list[i] < 0
-        i = i +1
+        i = i + 1
         continue
 print('Конец строки')
