@@ -9,5 +9,5 @@ while i < l:
         i = i + 1
         continue
     else:
-        print('Дошли до -5')
+#        print('Дошли до -5')
         break
