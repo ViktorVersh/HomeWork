@@ -13,5 +13,5 @@ for i in numbers:
         primes.append(i)
     else:
         not_primes.append(i)
-print(primes)
-print(not_primes)
+print("Простые числа: ", primes)
+print("Составные числа: ", not_primes)
