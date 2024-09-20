@@ -16,6 +16,6 @@ values_dict = {'a': 25, 'b': 'world', 'c': False}
 print_params(*values_list)
 print_params(**values_dict)
 
-values_list_2 = [32.23, 'новости']
+values_list_2 = [32.23, "'новости'"]
 
 print_params(*values_list_2, 42)
