@@ -6,7 +6,5 @@ def divide(first, second):
         return div
 
 
-# result = divide(69, 3)
-# print(result)
-# result_1 = divide(54, 0)
-# print(result_1)
+# print(divide(69, 3))
+# print(divide(54, 0))
