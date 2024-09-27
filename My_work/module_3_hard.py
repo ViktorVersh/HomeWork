@@ -18,7 +18,7 @@ def calculate_structure_sum(data_structure):
                     result_sum += len(key)
                 elif isinstance(key, int):
                     result_sum += key
-                elif isinstance(value, int):
+                if isinstance(value, int):
                     result_sum += value
                 elif isinstance(value, str):
                     result_sum += len(value)
