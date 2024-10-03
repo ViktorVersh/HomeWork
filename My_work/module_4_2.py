@@ -1,8 +1,19 @@
+# a_str = []
+#
+#
 def test_function():
+    # global a_str
+    # a_str = ' основная функция'
+    # print(a_str)
+    # a = []
+
     def inner_function():
-        print('я в области видимости test_function')
+        print('Я в области видимости функции test_function')
+        # nonlocal a
+        # a = ' я в области видимости test_function '
 
     inner_function()
+    # print(a)
 
 
 test_function()
