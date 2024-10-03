@@ -6,6 +6,7 @@ def test_function():
 
 
 test_function()
+
 """
 вызов inner_function() вне функции test_function() - Выдает ошибку:
 name 'inner_function' is not defined. Did you mean: 'test_function'?
