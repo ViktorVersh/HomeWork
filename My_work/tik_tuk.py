@@ -64,6 +64,7 @@ for i in range(1, 10):
         draw_area()
         continue
     draw_area()
+
     if check_winner() == 'X':
         print('Победа крестиков')
         break
