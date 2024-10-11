@@ -6,7 +6,7 @@ class House:
     def __len__(self):
         return self.number_of_floors
 
-    def __str__(self, *name, **number_of_floors):
+    def __str__(self, *args, **kwargs):
         return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
 
 
