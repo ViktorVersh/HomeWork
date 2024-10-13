@@ -42,7 +42,6 @@ h1.__add__()  # __iadd__
 print(h1)
 h2.__add__()  # __radd__
 print(h2)
-
 print(h1 > h2)  # __gt__
 print(h1 >= h2)  # __ge__
 print(h1 < h2)  # __lt__
