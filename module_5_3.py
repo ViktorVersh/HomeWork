@@ -9,9 +9,9 @@ class House:
     def __eq__(self, other):
         return self.number_of_floors == other.number_of_floors
 
-    def __add__(self):
-        self.number_of_floors += 10
-        return self.number_of_floors
+    def __add__(self, other):
+        self.number_of_floors += other
+        return self
 
     def __gt__(self, other):
         return self.number_of_floors > other.number_of_floors
@@ -35,14 +35,13 @@ print(h1)
 print(h2)
 print(h1 == h2)  # __eq__
 # if h1:
-h1.__add__()  # __add__
+h1 + 10  # __add__
 print(h1)
 print(h1 == h2)
-h1.__add__()  # __iadd__
+h1 + 10  # __iadd__
 print(h1)
-h2.__add__()  # __radd__
+h2 + 10 # __radd__
 print(h2)
-
 print(h1 > h2)  # __gt__
 print(h1 >= h2)  # __ge__
 print(h1 < h2)  # __lt__
