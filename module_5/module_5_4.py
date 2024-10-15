@@ -8,7 +8,6 @@ class House:
     def __init__(self, name, floor):
         self.name = name
         self.number_of_floor = floor
-        return
 
     def __del__(self):
         print(f'{self.name} снесён, но он останется в истории')
