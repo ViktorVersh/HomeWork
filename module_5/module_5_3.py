@@ -3,7 +3,7 @@ class House:
         self.name = name
         self.number_of_floors = number_of_floors
 
-    def __str__(self, *args, **kwargs):
+    def __str__(self):
         return f'Название: {self.name}, кол-во этажей: {self.number_of_floors}'
 
     def __eq__(self, other):
