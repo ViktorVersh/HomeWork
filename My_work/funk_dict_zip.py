@@ -3,7 +3,7 @@ emplo_camp = ['Виктор', 'Николай', 'Василий', 'Максим'
 campain = dict(zip(emplo_camp, salary_camp))
 
 
-def avg_salary():  # Возвращает средний заработной платы через переменную
+def aver_salary():  # Возвращает средний заработной платы через переменную
     avg_sal = round(sum(salary_camp) / len(salary_camp), 2)
     return avg_sal
 
@@ -21,4 +21,4 @@ print(campain[emplo_camp[3]])
 print(campain['Василий'])
 print(f'Максимальная зарплата в кампании: {max_salary()}')
 print(f'Минимальная зарплата в кампании: {min_salary()}')
-print(f'Средняя зарплата в кампании: {avg_salary()}')
+print(f'Средняя зарплата в кампании: {aver_salary()}')
