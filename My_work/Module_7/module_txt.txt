@@ -1,0 +1,7 @@
+Hello!!!
+This is file txt
+My name is Viktor
+My age 57
+Здравствуйте!!!
+Меня зовут Виктор
+Мне 57 лет
