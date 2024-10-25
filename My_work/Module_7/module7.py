@@ -1,4 +1,5 @@
 from pprint import pprint
+import io
 
 name = 'module_txt.txt'  # просто текстовый файл
 file = open(name, 'r', encoding='UTF-8')  # r = read, w = write, a = append
