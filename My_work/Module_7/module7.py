@@ -26,3 +26,11 @@ file = open(name, 'a', encoding='UTF-8')
 print(file.seek(30))
 file.write('\nСегодня ясный солнечный день\n')
 file.close()
+
+name = 'module_txt2.txt'
+file = open(name, 'r', encoding='UTF-8')
+print(file.tell())
+print(file.writable())
+print(file.readable())
+print(file.seekable())
+file.close()
