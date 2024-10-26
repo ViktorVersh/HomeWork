@@ -4,6 +4,7 @@ def custom_write(file_name, strings):
     for i, string in enumerate(strings):
         strings_positions[(i, file.tell())] = string
         file.write(string + '\n')
+    file.close()
     return strings_positions
 
 
