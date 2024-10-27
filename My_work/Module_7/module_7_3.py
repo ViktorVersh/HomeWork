@@ -5,8 +5,8 @@ class WordsFinder:
 
     def get_all_words(self):
         all_words = {}  # имя файла и слова
-        for file_name in self.file_names:  # проходим по всем файлам
-            with open(self.file_names[0], encoding='utf-8') as file:  # открываем файл
+        for f in self.file_names:
+            with open(f, encoding='utf-8') as file:  # открываем файл
                 words = []  # список слов
                 for line in file:  # проходим по всему тексту
                     line = line.lower()  # преобразуем строку в нижний регистр
@@ -14,7 +14,8 @@ class WordsFinder:
                     for m_punc in mask_punctuation:  # цикл для поиска каждого знака препинания
                         line = line.replace(m_punc, ' ')  # заменяем знак препинания на пробел
                     words.extend(line.split())  # добавляем слова в список
-            all_words[file_name] = words  # добавляем слова в словарь
+            all_words[f] = words  # добавляем слова в словарь с именем файла
+            continue # продолжаем поиск
         return all_words  # возвращаем словарь
 
     def find(self, word):
@@ -22,7 +23,9 @@ class WordsFinder:
         for key, value in self.get_all_words().items():
             if word.lower() in value:  # если слово есть в тексте
                 find_w[key] = value.index(word.lower()) + 1  # +1 для того, чтобы найти индекс
-            return find_w  # возвращаем словарь
+            continue  # продолжаем поиск
+        return find_w  # возвращаем словарь
+
 
     def count(self, word):
         count_w = {}  # имя файла и количество слов
