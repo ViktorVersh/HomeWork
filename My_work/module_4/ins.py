@@ -1,5 +1,3 @@
-from sortfunc import *
-
 from My_work.module_4.sortfunc import buble_sort, selection_sort
 
 data1 = list(map(int, input('Введите числа через пробел:').split()))
