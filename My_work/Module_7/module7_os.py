@@ -6,7 +6,7 @@ file = [f for f in os.listdir(directory) if os.path.isfile(f)]
 print(file)
 dirs = [d for d in os.listdir(directory) if os.path.isdir(d)]
 print(dirs)
-os.startfile(file[7])
+#  os.startfile(file[8])
 
 for root, dirs, files in os.walk(directory):
     for file in files:
