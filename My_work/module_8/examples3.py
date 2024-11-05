@@ -14,5 +14,5 @@ try:
     print(result)
 except ProZero as e:
     print('Не очень хороший день, мы словили ошибку')
-    print(f'сообщение об ошибке{e.message}')
-    print(f'Дополнительная информация{e.extra_info}')
+    print(f'сообщение об ошибке: {e.message}')
+    print(f'Дополнительная информация: {e.extra_info}')
