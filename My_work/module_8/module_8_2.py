@@ -20,7 +20,8 @@ def calculate_average(*numbers):
     except ZeroDivisionError:
         return 0
     except TypeError:
-        return f'В numbers записан некорректный тип данных'
+        print(f'В numbers записан некорректный тип данных')
+        return None
 
 
 print(f'Результат 1: {calculate_average("1, 2, 3")}')  # Строка перебирается, но каждый символ - строковый тип
