@@ -10,7 +10,7 @@ def f(a, b):
     return a / b
 
 try:
-    result = f(10, 1)
+    result = f(10, 0)
     print(result)
 except ProZero as e:
     print('Не очень хороший день, мы словили ошибку')
