@@ -1,4 +1,7 @@
 def add_everything_up(a, b):
+    """
+    принимает a и b, которые могут быть как числами(int, float), так и строками(str)
+    """
     try:
         return round(a + b, 3)
     except TypeError:
