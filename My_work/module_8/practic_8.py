@@ -15,6 +15,7 @@ def calc(line):
     if operation == '*':
         print(f'Результат {operand_1 * operand_2}')
 
+
 cnt = 0
 
 with open('calc.txt', 'r') as file:
