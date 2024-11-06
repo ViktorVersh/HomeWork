@@ -23,7 +23,6 @@ with open('calc.txt', 'r') as file:
         cnt += 1
         try:
             calc(line)
-            # cnt += 1
         except ValueError as exc:
             if 'unpack' in exc.args[0]:
                 print(f'Ошибка в строке {cnt}, не хватает данных для ответа')
