@@ -32,7 +32,7 @@ def get_advanced_writer(file_name):  # Функция создающая фай�
 write = get_advanced_writer('example.txt')
 write('Это строчка', ['А', 'это', 'уже', 'число', 5, 'в', 'списке'])
 
-first_ball = MysticBall('Да', 'Нет', 'Наверное', 'Может быть', 'Возможно', 'Безусловно')
+first_ball = MysticBall('Да', 'Нет', 'Наверное', 'Может быть')
 print(first_ball())
 print(first_ball())
 print(first_ball())
