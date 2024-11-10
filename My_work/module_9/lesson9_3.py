@@ -38,7 +38,7 @@ import time
 #     print(i)
 #
 # finish_time = time.time()
-# print(f'Затрачено времени в милисекундах {(finish_time - start_time)*1000}')
+# print(f'Затрачено времени в миллисекундах {(finish_time - start_time)*1000}')
 
 # Ленивые вычисления в строенных функциях map, open, range, zip
 list_1 = [1, 3, 2, 4, 5, 6]
