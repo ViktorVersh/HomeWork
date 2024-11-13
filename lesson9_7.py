@@ -9,7 +9,7 @@
 # greet = nul_decorator(greet)
 # print(greet)
 
-#=============================================================================================
+# =============================================================================================
 
 # def nul_decorator(func):
 #     def wrapper():
@@ -24,7 +24,7 @@
 #
 # print(greet())
 
-#====================================================================================================
+# ====================================================================================================
 import time
 import sys
 
@@ -38,6 +38,7 @@ def time_track(func):
         elapsed = round((start_time - end_time), 4)
         print(f'Функция работала {elapsed} минут')
         return result
+
     return surogate
 
 
@@ -47,6 +48,7 @@ def digits(*args):
     for i in args:
         total *= i ** 5000
     return len(str(total))
+
 
 sys.set_int_max_str_digits(100000)
 result = digits(5648, 4782, 1234, 9548)
