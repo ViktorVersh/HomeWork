@@ -28,5 +28,5 @@ def sum_three(*args):
     return sum(args)
 
 
-result = sum_three(0, 0, 3, 5)
+result = sum_three(2, 3, 6)
 print(result)
