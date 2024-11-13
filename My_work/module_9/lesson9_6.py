@@ -77,4 +77,4 @@ for line in line_read_file('voyna-i-mir.txt'):
     print(line)
 
 fin = time.time()
-print((fin - start)*1000)
+print((fin - start) * 1000)
