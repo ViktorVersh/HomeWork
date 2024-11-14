@@ -35,7 +35,7 @@ def time_track(func):
         result = func(*args, **kwargs)
 
         end_time = time.time()
-        elapsed = round((start_time - end_time), 4)
+        elapsed = round((end_time - start_time), 4)
         print(f'Функция работала {elapsed} минут')
         return result
 
@@ -52,4 +52,4 @@ def digits(*args):
 
 sys.set_int_max_str_digits(100000)
 result = digits(5648, 4782, 1234, 9548)
-print(result)
+print(f'Длина строки составила {result} символов')
