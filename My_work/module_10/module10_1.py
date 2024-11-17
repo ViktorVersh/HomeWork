@@ -10,6 +10,7 @@ def write_words(word_count, file_name):
     print(f'Завершилась запись в файл {file_name}')
     return
 
+
 start_time = time()
 write_words(10, 'example1.txt')
 write_words(30, 'example2.txt')
