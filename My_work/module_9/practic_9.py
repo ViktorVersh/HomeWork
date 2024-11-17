@@ -1,11 +1,11 @@
 animal = 'мишка'
-animals = ['зайка', 'мишка', 'бегемотик']
+animals = ['зайка', 'мишка', 'бегемот']
 
 
 def gen_repeat(n):
-
     def repeat(animal):
         return (animal[:2] + '-') * n + animal
+
     return repeat
 
 
@@ -15,8 +15,7 @@ test_2 = gen_repeat(2)
 print(test_1(animal))
 print(test_2(animal))
 
-
-repetitions = [gen_repeat(n)  for n in range(1, 4)]
+repetitions = [gen_repeat(n) for n in range(1, 4)]
 result = [func(animal) for func in repetitions]
 
 print(result)
@@ -38,6 +37,7 @@ def memoize(f):
             return f'функция уже была выполнена ранее результат {mem[args]}'
 
     return wrapper
+
 
 @memoize
 def func(a, b):
