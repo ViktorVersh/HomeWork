@@ -2,6 +2,7 @@ import threading  # импортируем библиотеку потоков t
 import time  # импортируем библиотеку time
 
 
+lock = threading.Lock()
 # ------------------создаем свой класс потоков------------------------------
 class MyThread(threading.Thread):
     def __init__(self, name, counter, delay):
@@ -12,9 +13,10 @@ class MyThread(threading.Thread):
 
     def timer(self, name, counter, delay):  # функция вывода времени
         while counter:
-            time.sleep(delay)
-            print(f'{name} {time.ctime(time.time())}')
-            counter -= 1
+            with lock:
+                time.sleep(delay)
+                print(f'{name} {time.ctime(time.time())}')
+                counter -= 1
 
     #  -----------------переопределяем метод run------------------------
     def run(self):
