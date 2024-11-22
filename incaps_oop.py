@@ -5,3 +5,4 @@ class A:
 
 a = A()
 print(a._A__b())
+
