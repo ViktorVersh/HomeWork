@@ -27,9 +27,15 @@ def second_worker(n):
 # thread2.start()
 # thread1.join()
 # thread2.join()
+def f(x):
+    return x * x
+
 
 if __name__ == '__main__':
     process1 = multiprocessing.Process(target=first_worker, args=(10,))
     process2 = multiprocessing.Process(target=second_worker, args=(15,))
     process1.start()
     process2.start()
+
+    with multiprocessing.Pool(5) as p:
+        print(p.map(f, [1, 2, 3]))
