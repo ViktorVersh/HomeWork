@@ -35,8 +35,8 @@ filenames = [f'./file {number}.txt' for number in range(1, 5)]  # создаем
 if __name__ == '__main__':
     start_time = time.time()
 
-    with multiprocessing.Pool(5) as pool:
-        pool.map(read_info, [*filenames])
+    with multiprocessing.Pool(5) as p:
+        p.map(read_info, [*filenames])
 
     end_time = time.time()
 
