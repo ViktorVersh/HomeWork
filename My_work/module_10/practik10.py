@@ -1,12 +1,16 @@
 import multiprocessing as mp
-from queue import Empty
+from datetime import datetime
+
 from PIL import Image
+from multiprocessing import Queue, Process
+
+from _queue import Empty
 
 
-def resize_image(paths_image, queue):
-    for path_image in paths_image:
+def resize_image(paths_images, queue):
+    for path_image in paths_images:
         image = Image.open(path_image)
-        image = image.resize((600, 800))
+        image = image.resize((800, 600))
         queue.put((path_image, image))
 
 
@@ -16,21 +20,27 @@ def color_image(queue):
             path_image, image = queue.get(timeout=5)
         except Empty:
             break
-        image - image.convert('L')
+        image = image.convert('L')
         image.save(path_image)
 
 
 if __name__ == '__main__':
     data = []
-    queue = mp.Queue
+    queue = Queue()
 
-    for image in range(1, 10):
+    for image in range(151, 201):
         data.append(f'./image/img_{image}.jpg')
 
-    resize_proces = mp.Process(target=resize_image, args=(data, queue))
-    color_proces = mp.Process(target=color_image, args= (queue, ))
+    start = datetime.now()
+    resize_process = Process(target=resize_image, args=(data, queue))
+    color_process = Process(target=color_image, args=(queue,))
 
-    resize_proces.start()
-    color_proces.start()
-    resize_proces.join()
-    color_proces.join()
+    resize_process.start()
+    color_process.start()
+
+    resize_process.join()
+    while not queue.empty():
+        pass
+    color_process.join()
+    end = datetime.now()
+    print(end - start)
