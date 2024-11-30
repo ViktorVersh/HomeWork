@@ -28,10 +28,10 @@ def min_element(matrix):
 
 def sum_diagonals(matrix):
     """Вычисляем сумму элементов обеих диагоналей матрицы."""
-    main_diagonal = np.trace(matrix)
-    anti_diagonal = np.trace(np.fliplr(matrix))
-    return main_diagonal + anti_diagonal
-
+    main_diag = np.sum(np.diag(matrix))
+    flipped_matrix = np.flipud(matrix)
+    anti_diag = np.sum(np.diag(flipped_matrix))
+    return main_diag + anti_diag
 
 
 # Создание матрицы
