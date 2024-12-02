@@ -2,7 +2,7 @@ def is_valid_email(recipient):
     return '@' in recipient and (recipient.endswith('.com') or recipient.endswith('.ru') or recipient.endswith('.net'))
 
 
-def is_valid_email(sender):
+def is_valid_emails(sender):
     return '@' in sender and (sender.endswith('.com') or sender.endswith('.ru') or sender.endswith('.net'))
 
 
@@ -14,7 +14,7 @@ def send_email(message, recipient, sender="university.help@gmail.com"):
     elif not is_valid_email(recipient):
         result = f'"Невозможно отправить письмо с адреса {sender} на адрес {recipient}"'
         print(result)
-    elif not is_valid_email(sender):
+    elif not is_valid_emails(sender):
         result_2 = f"Невозможно отправить письмо с адреса {sender} на адрес {recipient}"
         print(result_2)
     elif sender != "university.help@gmail.com":
