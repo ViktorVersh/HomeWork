@@ -6,7 +6,7 @@ def calculate_structure_sum(data_structure):
     """
     Функция подсчета содержимого переменной data_structure
     :param data_structure:
-    :return: Возвращает сумму ысех чисел, сумму длин строк, ключей и т.д.
+    :return: Возвращает сумму всех чисел, сумму длин строк, ключей и т.д.
     """
     result_sum = 0
     for i in data_structure:
