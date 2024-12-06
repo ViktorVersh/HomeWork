@@ -41,16 +41,16 @@ func = some_function
 # print(type(requests))
 # print(type(requests.get))
 
-#  Пример 3 функция dir
-#  функция dir() возвращает отсортированный список атрибутов и методов для указанного объекта
-#  который может быть объявленной переменной или функцией
-# pprint(dir(some_number))
+ # Пример 3 функция dir
+ # функция dir() возвращает отсортированный список атрибутов и методов для указанного объекта
+ # который может быть объявленной переменной или функцией
+pprint(dir(some_number))
 # pprint(dir(some_list))
 # pprint(dir(some_object))
 # pprint(dir(some_object))
 # pprint(dir(SomeClass))
 # pprint(dir(requests))
-pprint(dir())
+# pprint(dir())
 
 # help(requests)
 # help(requests.get)
