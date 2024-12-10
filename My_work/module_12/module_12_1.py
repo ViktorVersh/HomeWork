@@ -28,13 +28,12 @@ class RunnerTest(TestCase, Runner):
         self.assertNotEqual(name.distance, 50)
 
     def test_challenge(self):
+        """
+        Тест на метод run
+        :return:
+        """
         name = Runner('Name')
         name1 = Runner('Name1')
-        for _ in range(10):
-            name.run()
-        self.assertEqual(name.distance, 100)
-        self.assertNotEqual(name.distance, 50)
-        name = Runner('Name')
         for _ in range(10):
             name.walk()
             name1.run()
