@@ -29,7 +29,7 @@ class RunnerTest(TestCase, Runner):
 
     def test_challenge(self):
         """
-        Тест на метод run
+        Тест на метод run и walk
         :return:
         """
         name = Runner('Name')
