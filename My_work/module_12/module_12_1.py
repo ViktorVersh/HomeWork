@@ -44,4 +44,4 @@ class RunnerTest(TestCase, Runner):
 
 
 if __name__ == '__main__':
-    TestCase.maim()
+    TestCase.main()
