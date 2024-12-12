@@ -32,6 +32,7 @@ class Tournament:
     Класс для проведения забега.
         Принимает на вход дистанцию и участников.
         Метод start() запускает забег.
+
     """
     def __init__(self, distance, *participants):
         self.full_distance = distance
