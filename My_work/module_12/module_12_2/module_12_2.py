@@ -84,7 +84,6 @@ class TournamentTest(unittest.TestCase):
         с использованием малых дистанций (6)
         :return:
         """
-
         tournament = Tournament(6, self.runner1, self.runner2, self.runner3)
         results = tournament.start()
         self.all_results[len(self.all_results) + 1] = results

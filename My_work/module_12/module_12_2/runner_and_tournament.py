@@ -6,6 +6,7 @@ class Runner:
     и методом walk(увеличивает дистанцию на величину скорости), а также магическими методами __str__ и __eq__
     для вывода имени спортсмена и сравнении имён спортсменов(бегунов)
     """
+
     def __init__(self, name, speed=5):
         self.name = name
         self.distance = 0
@@ -34,10 +35,10 @@ class Tournament:
         Метод start() запускает забег.
 
     """
+
     def __init__(self, distance, *participants):
         self.full_distance = distance
         self.participants = list(participants)
-
 
     def start(self):
         """
@@ -46,33 +47,33 @@ class Tournament:
         """
         finishers = {}
         place = 1
-        remaining_participants = self.participants[:] # список участников
+        remaining_participants = self.participants[:]  # список участников
 
-        while remaining_participants:   # while пока есть участники
-            new_remaining_participants = [] # новый список участников
+        while remaining_participants:  # while пока есть участники
+            new_remaining_participants = []  # новый список участников
 
-            for participant in remaining_participants: # проходимся по списку участников
-                participant.run() # Стартует каждый из участников
+            for participant in remaining_participants:  # проходимся по списку участников
+                participant.run()  # Стартует каждый из участников
 
                 if participant.distance >= self.full_distance:  # если участник достиг максимальной дистанции
-                    finishers[place] = participant # добавляем его в список финишировавших
-                    place += 1 # увеличиваем номер места
+                    finishers[place] = participant  # добавляем его в список финишировавших
+                    place += 1  # увеличиваем номер места
                 else:
-                    new_remaining_participants.append(participant)# если участник не достиг максимальной
-                                                                  # дистанции добавляем его в новый список участников
+                    new_remaining_participants.append(participant)  # если участник не достиг максимальной
+                    # дистанции добавляем его в новый список участников
 
-            remaining_participants = new_remaining_participants # обновляем список участников
+            remaining_participants = new_remaining_participants  # обновляем список участников
 
         return finishers
 
 # старый код    # finishers = {}
-    # place = 1
-    # while self.participants:
-    #     for participant in self.participants:
-    #         participant.run()
-    #         if participant.distance >= self.full_distance:
-    #             finishers[place] = participant
-    #             place += 1
-    #             self.participants.remove(participant)
-    #
-    # return finishers
+# place = 1
+# while self.participants:
+#     for participant in self.participants:
+#         participant.run()
+#         if participant.distance >= self.full_distance:
+#             finishers[place] = participant
+#             place += 1
+#             self.participants.remove(participant)
+#
+# return finishers
