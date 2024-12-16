@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 """
 Задача "Асинхронные силачи"
@@ -20,7 +21,7 @@ async def start_strongman(name, power):
 
     print(f'Силач {name} закончил соревнования.')
 
-
+start = time.time()
 async def start_tournament():
     """
     функция старт турнира
@@ -35,3 +36,4 @@ async def start_tournament():
 
 
 asyncio.run(start_tournament())
+print(f'На соревнование затрачено {round((time.time() - start), 2)} секунд')
