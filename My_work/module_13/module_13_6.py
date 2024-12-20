@@ -41,14 +41,14 @@ async def main_menu(message):
     await message.answer("Выберите опцию", reply_markup=kb_in)
 
 
-@dp.callback_query_handler(text='formulas')  # Обработка команды "Информация"
+@dp.callback_query_handler(text='formulas')  # Обработка команды "formulas"
 async def get_formulas(call):
     await call.message.answer("для мужчин: 10 х вес (кг) + 6,25 x рост (см) – 5 х возраст (г) + 5; " '\n'
                               "для женщин: 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) – 161.")
     await call.answer()
 
 
-@dp.callback_query_handler(text='calories')  # Обработка команды "Расчитать" и запуск машины состояний
+@dp.callback_query_handler(text='calories')  # Обработка команды "calories" и запуск машины состояний
 async def set_age(calc):
     await calc.message.answer('Введите ваш возраст:')
     await UserState.age.set()
