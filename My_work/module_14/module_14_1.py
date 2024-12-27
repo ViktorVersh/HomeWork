@@ -31,8 +31,8 @@ cursor.execute('SELECT * FROM Users WHERE age != 60')  # выбираем зап
 
 users = cursor.fetchall()
 
-for user in users:
-    print(f'Имя: {user[1]} | Почта: {user[2]} | Возраст: {user[3]} | Баланс: {user[4]}')
+for i in users:
+    print(f'Имя: {i[1]} | Почта: {i[2]} | Возраст: {i[3]} | Баланс: {i[4]}')
 
 connection.commit()
 connection.close()
