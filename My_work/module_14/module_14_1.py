@@ -25,16 +25,14 @@ balance INTEGER NOT NULL)
 
 cursor.execute("UPDATE Users SET balance = ? WHERE id % 2 != 0", (500,))  # меняем значение balance
 
-cursor.execute("DELETE FROM Users WHERE id = 1 OR id = 4 OR id = 7 OR id = 10")  # удаляем каждую 3 запись
+cursor.execute("DELETE FROM Users WHERE id % 3 = 1")  # удаляем каждую 3 запись
 
-cursor.execute("SELECT username, email, age, balance FROM Users")  # Выбираем все записи
+cursor.execute('SELECT * FROM Users WHERE age != 60')  # выбираем записи, у которых возраст не равен 60
 
-new_age_list = cursor.fetchall()  # получаем список всех записей
+users = cursor.fetchall()
 
-cursor.execute("SELECT username, email, age, balance FROM Users WHERE age != 60")  # выбираем если возраст не равен 60
-
-for i in new_age_list:
-    print(i)
+for user in users:
+    print(f'Имя: {user[1]} | Почта: {user[2]} | Возраст: {user[3]} | Баланс: {user[4]}')
 
 connection.commit()
 connection.close()
