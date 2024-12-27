@@ -42,7 +42,7 @@ count_users = cursor.fetchone()[0]  # Присваиваем переменно�
 cursor.execute("SELECT SUM(balance) FROM Users")  # Подсчитываем сумму всех балансов
 sum_balance = cursor.fetchone()[0]  # Присваиваем переменной сумму всех балансов
 
-print (sum_balance / count_users)  # Выводим на консоль средний баланс
+print(sum_balance / count_users)  # Выводим на консоль средний баланс
 
 connection.commit()
 connection.close()
