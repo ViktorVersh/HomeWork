@@ -1,4 +1,5 @@
 class Human:
+    head = True
     def __init__(self, name, age): # self - указатель на самого себя, на объект например в нашем случае den или maxi
         self.name = name
         self.age = age
