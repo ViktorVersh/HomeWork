@@ -28,6 +28,9 @@ class Animal:
         else:
             print("Be careful, i'm attacking you 0_0")
 
+    def speak(self):
+        print(self.sound)
+
 
 class Bird(Animal):
     def __init__(self, beak = True):
@@ -50,13 +53,12 @@ class PoisonousAnimal(Animal):
 
 class Duckbill(PoisonousAnimal, Bird, AquaticAnimal):
     sound = "Click-click-click"
+
     def __init__(self, speed):
         self.beak = True
         self.speed = speed
         super().__init__()
 
-    def speek(self):
-        print(self.sound)
 
 
 db = Duckbill(10)
@@ -64,7 +66,7 @@ db = Duckbill(10)
 print(db.live)
 print(db.beak)
 
-db.speek()
+db.speak()
 db.attack()
 
 db.move(1, 2, 3)
