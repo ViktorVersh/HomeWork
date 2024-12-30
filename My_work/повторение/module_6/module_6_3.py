@@ -33,11 +33,11 @@ class Animal:
 
 
 class Bird(Animal):
-    def __init__(self, beak = True):
+    def __init__(self, beak=True):
         self.beak = beak
 
     def lay_eggs(self):
-        print(f"Here are(is) {random.randint(1,4)} eggs for you")
+        print(f"Here are(is) {random.randint(1, 4)} eggs for you")
 
 
 class AquaticAnimal(Animal):
@@ -60,7 +60,6 @@ class Duckbill(PoisonousAnimal, Bird, AquaticAnimal):
         super().__init__()
 
 
-
 db = Duckbill(10)
 
 print(db.live)
@@ -75,8 +74,3 @@ db.dive_in(6)
 db.get_cords()
 
 db.lay_eggs()
-
-
-
-
-
