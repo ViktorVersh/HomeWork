@@ -3,9 +3,6 @@
 """
 
 class Animal:
-    alive = True
-    fed = False
-
     def __init__(self, name):
         self. name = name
         self.alive = True
