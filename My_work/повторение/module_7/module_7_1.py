@@ -18,8 +18,8 @@ class Shop:
                 if i.name not in self.get_products():
                     file.write(f'{i}\n')
                 else:
-                    i.weight += float(self.get_products().split(',')[1])
-                    print(f'Продукт {i.name} уже был в магазине, его общий вес теперь равен {i.weight}')
+                    print(f'Продукт {i.name} уже есть в магазине')
+
 
 
     def get_products(self):
