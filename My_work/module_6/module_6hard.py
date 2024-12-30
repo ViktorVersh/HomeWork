@@ -65,6 +65,7 @@ class Triangle(Figure):
 
     def __init__(self, color, sides):
         super().__init__(sides, color)
+        self.__sides = sides
 
     def get_square(self):
         p = self.__sides * self.sides_count
