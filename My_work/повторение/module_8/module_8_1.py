@@ -6,6 +6,9 @@
 def add_everything_up(a, b):
     """
     Функция, которая складывает две переменные
+    :param a:
+    :param b:
+    :return:
     """
     try:
         return round((a + b), 3)
