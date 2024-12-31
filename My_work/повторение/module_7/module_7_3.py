@@ -16,7 +16,7 @@ class WordsFinder:
                     line = line.replace(j, '')
                     line1 = line.split()
                 all_words[i] = line1
-            return all_words
+        return all_words
 
     def find(self, word):
         find_words = {}
@@ -38,5 +38,5 @@ class WordsFinder:
 
 finder2 = WordsFinder('test_file.txt')
 print(finder2.get_all_words()) # Все слова
-print(finder2.find('TEXT')) # 3 слово по счёту
+print(finder2.find('if')) # 3 слово по счёту
 print(finder2.count('teXT')) # 4 слова teXT в тексте всего
