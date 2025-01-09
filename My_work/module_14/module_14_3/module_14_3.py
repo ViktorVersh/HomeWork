@@ -40,12 +40,12 @@ class UserState(StatesGroup):
 
 @dp.message_handler(commands='start')
 async def start(message):  # Функция ответа на команду "start"
-    await message.answer("Привет! Я бот помогающий твоему здоровью. Введите команду 'Расчитать'",
-                         reply_markup=kb)  # Ответ бота, добавляем кнопки "Расчитать" и "Информация"
+    await message.answer("Привет! Я бот помогающий твоему здоровью. Введите команду 'Рассчитать'",
+                         reply_markup=kb)  # Ответ бота, добавляем кнопки "Рассчитать" и "Информация"
 
 
 @dp.message_handler(text='Купить')
-async def get_buying_list(message):
+async def get_buying_list(message): # Функция ответа на команду "Купить"
     for i in range(1, 5):
         with open(fr'files\{i}.png', 'rb') as img:
             await message.answer_photo(img, f'Название: Product{i}| Описание: описание {i}| Цена: {i} * 100')
