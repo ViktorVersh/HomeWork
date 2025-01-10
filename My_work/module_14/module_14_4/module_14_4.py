@@ -1,5 +1,5 @@
 """
-Задача "Ещё больше выбора"
+Задача "Продуктовая база"
 """
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
