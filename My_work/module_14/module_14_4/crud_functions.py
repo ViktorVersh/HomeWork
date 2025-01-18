@@ -3,6 +3,7 @@ import sqlite3
 connection = sqlite3.connect("Products.db")
 cursor = connection.cursor()
 
+
 def initiate_db():
     """
     Создаёт базу данных если её ещё нет
@@ -42,7 +43,6 @@ def get_all_products():
 
 connection.commit()
 connection.close()
-
 
 if __name__ == '__main__':
     initiate_db()

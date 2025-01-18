@@ -115,7 +115,7 @@ async def send_calories(message, state):
     else:
         message.text = (10 * int(weight) + 6.25 * int(growth) - 5 * int(age) + 5)  # формула для мужчин
 
-    await message.answer(f'Ваша норма каллорий: {message.text}')
+    await message.answer(f'Ваша норма калорий: {message.text}')
     await state.finish()
 
 
