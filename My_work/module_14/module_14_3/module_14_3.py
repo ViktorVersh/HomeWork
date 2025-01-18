@@ -12,7 +12,7 @@ bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 kb_in = InlineKeyboardMarkup(row_width=2)
-kb_in.add(InlineKeyboardButton(text='Расчитать норму калорий', callback_data='calories'),
+kb_in.add(InlineKeyboardButton(text='Рассчитать норму калорий', callback_data='calories'),
           InlineKeyboardButton(text='Формулы расчета', callback_data='formulas'))
 
 kb_in1 = InlineKeyboardMarkup(row_width=4)
@@ -22,7 +22,7 @@ kb_in1.add(InlineKeyboardButton(text='Продукт 1', callback_data='product_
            InlineKeyboardButton(text='Продукт 4', callback_data='product_buying'))
 
 kb = ReplyKeyboardMarkup(row_width=2, resize_keyboard=True, one_time_keyboard=True)
-kb.add(KeyboardButton('Расчитать'), KeyboardButton('Информация'), KeyboardButton('Купить'))
+kb.add(KeyboardButton('Рассчитать'), KeyboardButton('Информация'), KeyboardButton('Купить'))
 
 kb1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
 kb1.add(KeyboardButton('мужской'), KeyboardButton('женский'))
@@ -58,7 +58,7 @@ async def send_confirm_message(call):
     await call.answer()
 
 
-@dp.message_handler(text='Расчитать')
+@dp.message_handler(text='Рассчитать')
 async def main_menu(message):
     await message.answer("Выберите опцию", reply_markup=kb_in)
 
@@ -112,7 +112,7 @@ async def send_calories(message, state):
     else:
         message.text = (10 * int(weight) + 6.25 * int(growth) - 5 * int(age) + 5)  # формула для мужчин
 
-    await message.answer(f'Ваша норма каллорий: {message.text}')
+    await message.answer(f'Ваша норма калорий: {message.text}')
     await state.finish()
 
 
