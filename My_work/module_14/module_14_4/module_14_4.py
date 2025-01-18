@@ -12,6 +12,7 @@ api = 'Ваш токен'
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
+initiate_db()
 get_all_products()
 
 kb_in = InlineKeyboardMarkup(row_width=2)
@@ -48,10 +49,10 @@ async def start(message):  # Функция ответа на команду "st
 
 
 @dp.message_handler(text='Купить')
-async def get_buying_list(message): # Функция ответа на команду "Купить"
+async def get_buying_list(message):  # Функция ответа на команду "Купить"
     for i in range(1, 5):
         with open(fr'files\{i}.png', 'rb') as img:
-            await message.answer_photo(img, get_all_products()[i-1])
+            await message.answer_photo(img, get_all_products()[i - 1])
     await message.answer("Выберите продукт для покупки", reply_markup=kb_in1)
 
 
