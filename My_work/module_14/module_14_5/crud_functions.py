@@ -1,9 +1,6 @@
 # import random
 import sqlite3
 
-connection = sqlite3.connect("Products.db")
-cursor = connection.cursor()
-
 
 def initiate_db():
     """
@@ -91,10 +88,13 @@ def is_included(username):
     return False
 
 
-connection.commit()
-connection.close()
+
 
 if __name__ == '__main__':
+    connection = sqlite3.connect("Products.db")
+    cursor = connection.cursor()
     initiate_db()
     print(get_all_products())
     print(is_included('User 30'))
+    connection.commit()
+    connection.close()

@@ -25,7 +25,8 @@ kb_in1.add(InlineKeyboardButton(text='Продукт 1', callback_data='product_
            InlineKeyboardButton(text='Продукт 4', callback_data='product_buying'))
 
 kb = ReplyKeyboardMarkup(row_width=2, resize_keyboard=True, one_time_keyboard=True)
-kb.add(KeyboardButton('Регистрация'), KeyboardButton('Рассчитать'), KeyboardButton('Информация'), KeyboardButton('Купить'))
+kb.add(KeyboardButton('Регистрация'), KeyboardButton('Рассчитать'), KeyboardButton('Информация'),
+       KeyboardButton('Купить'))
 
 kb1 = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
 kb1.add(KeyboardButton('мужской'), KeyboardButton('женский'))
@@ -49,7 +50,6 @@ class RegistrationState(StatesGroup):
     email = State()
     age = State()
     balance = State()
-
 
 
 @dp.message_handler(commands='start')
@@ -87,6 +87,7 @@ async def set_username(message, state):
         await message.answer("Введите свой email: ")
         await RegistrationState.email.set()
 
+
 @dp.message_handler(state=RegistrationState.email)
 async def set_email(message, state):
     await state.update_data(email=message.text)
@@ -97,7 +98,7 @@ async def set_email(message, state):
 @dp.message_handler(state=RegistrationState.age)
 async def set_age(message, state):
     await state.update_data(age=message.text)
-    data =await state.get_data()
+    data = await state.get_data()
     username = data['username']
     email = data['email']
     age = data['age']
@@ -105,7 +106,6 @@ async def set_age(message, state):
     await message.answer("Регистрация прошла успешно")
     await message.answer("Выберите опцию", reply_markup=kb)
     await state.finish()
-
 
 
 @dp.message_handler(text='Рассчитать')
@@ -162,7 +162,7 @@ async def send_calories(message, state):
     else:
         message.text = (10 * int(weight) + 6.25 * int(growth) - 5 * int(age) + 5)  # формула для мужчин
 
-    await message.answer(f'Ваша норма каллорий: {message.text}', reply_markup=kb)
+    await message.answer(f'Ваша норма калорий: {message.text}', reply_markup=kb)
     await state.finish()
 
 
@@ -172,4 +172,8 @@ async def all_message(message):  # Функция ответа на все со�
 
 
 if __name__ == '__main__':
+    connection = sqlite3.connect("Products.db")
+    cursor = connection.cursor()
     executor.start_polling(dp, skip_updates=True)  # Запуск бота
+    cursor.close()
+    connection.close()
