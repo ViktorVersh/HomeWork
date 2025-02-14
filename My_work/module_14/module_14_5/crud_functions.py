@@ -88,13 +88,14 @@ def is_included(username):
     return False
 
 
-
-
 if __name__ == '__main__':
     connection = sqlite3.connect("Products.db")
     cursor = connection.cursor()
     initiate_db()
-    print(get_all_products())
+    for i in get_all_products():
+        print(i)
+
+    # print(get_all_products())
     print(is_included('User 30'))
     connection.commit()
     connection.close()
