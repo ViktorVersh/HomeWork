@@ -13,15 +13,15 @@ while True:
         b = float(input('Введите первое число '))
         c = float(input('Введите второе число '))
         if a == '+':
-            print('%0.2f' % (b + c))
+            print('%.2f' % (b + c))
         elif a == '-':
-            print('%0.2f' % (b - c))
+            print('%.2f' % (b - c))
         elif a == '*':
-            print('%0.2f' % (b * c))
+            print('%.2f' % (b * c))
         elif a == '/':
             if c == 0:
                 print('Делить на ноль нельзя!')
             else:
-                print('%0.2f' % (b / c))
+                print('%.2f' % (b / c))
     else:
         print('Вы ввели не верное математическое действие ')
